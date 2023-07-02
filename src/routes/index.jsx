@@ -1,7 +1,7 @@
-import React, {Suspense} from "react";
+import React, { Suspense } from "react";
 
 
-import {Navigate, useRoutes} from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 
 const Zksync = React.lazy(() => import("@pages/Zksync"));
 const App = React.lazy(() => import("@/App"));
@@ -11,9 +11,10 @@ const Layer = React.lazy(() => import("@pages/Layer"));
 const Mirror = React.lazy(() => import("@pages/Mirror"));
 const Coffee = React.lazy(() => import("@pages/Coffee"));
 const Deposit = React.lazy(() => import("@pages/Deposit"));
+const Demo = React.lazy(() => import("@pages/Demo"));
 const router = [
     {
-        path: '/', element: <MainPage/>,
+        path: '/', element: <MainPage />,
         children: [
             // {
             //     path: '/',
@@ -21,31 +22,35 @@ const router = [
             // },
             {
                 path: '/zksync',
-                element: <Zksync/>,
+                element: <Zksync />,
             },
             {
                 path: '/stark',
-                element: <Stark/>,
+                element: <Stark />,
             },
             {
                 path: '/Layer',
-                element: <Layer/>,
+                element: <Layer />,
             },
             {
                 path: '/mirror',
-                element: <Mirror/>,
+                element: <Mirror />,
             },
             {
                 path: '/coffee',
-                element: <Coffee/>,
+                element: <Coffee />,
+            },
+            {
+                path: '/demo',
+                element: <Demo />,
             },
             {
                 path: '/deposit',
-                element: <Deposit/>,
+                element: <Deposit />,
             }
         ]
     },
-    {path: "*", element: <Navigate to="/"/>},
+    { path: "*", element: <Navigate to="/" /> },
 
 ];
 

@@ -1,9 +1,9 @@
-import {Menu} from 'antd';
-import {useEffect, useState} from 'react';
-import {useLocation, useNavigate} from "react-router-dom";
-import {GithubOutlined, TwitterOutlined} from "@ant-design/icons";
+import { Menu } from 'antd';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
+import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
 import './index.css'
-import {getEthPrice} from "@utils";
+import { getEthPrice } from "@utils";
 
 const EthPrice = () => {
     const [ethPrice, setEthPrice] = useState(null);
@@ -48,17 +48,21 @@ const MenuHeader = () => {
             key: 'coffee',
         },
         {
+            label: 'Demo',
+            key: 'demo',
+        },
+        {
             label: <a href="https://github.com/wxtsky/MyWalletScan" target="_blank"
-                      rel="noopener noreferrer"><GithubOutlined/></a>,
+                rel="noopener noreferrer"><GithubOutlined /></a>,
             key: 'github',
         },
         {
             label: <a href="https://twitter.com/jingluo0" target="_blank"
-                      rel="noopener noreferrer"><TwitterOutlined/></a>,
+                rel="noopener noreferrer"><TwitterOutlined /></a>,
             key: 'twitter',
         },
         {
-            label: <EthPrice/>,
+            label: <EthPrice />,
             key: 'ethPrice',
         }
     ];

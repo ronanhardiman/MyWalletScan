@@ -1,11 +1,13 @@
 import MenuHeader from "@pages/MenuHeader/index.jsx";
 import Zksync from "@pages/Zksync/index.jsx";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Stark from "@pages/Stark/index.jsx";
-import {Layout, FloatButton} from "antd";
+import { Layout, FloatButton } from "antd";
 import Layer from "@pages/Layer/index.jsx";
 import Mirror from "@pages/Mirror/index.jsx";
 import Coffee from "@pages/Coffee/index.jsx";
+import Demo from "@pages/Demo/index.jsx";
+
 import Deposit from "@pages/Deposit/index.jsx";
 import Notice from "@components/Notice/index.jsx";
 
@@ -47,13 +49,14 @@ function MainPage() {
                     }}
                 >
                     <div>
-                        {location.pathname === "/" && <Zksync/>}
-                        {location.pathname === "/zksync" && <Zksync/>}
-                        {location.pathname === "/stark" && <Stark/>}
-                        {location.pathname === "/layer" && <Layer/>}
-                        {location.pathname === "/mirror" && <Mirror/>}
-                        {location.pathname === "/coffee" && <Coffee/>}
-                        {location.pathname === "/deposit" && <Deposit/>}
+                        {location.pathname === "/" && <Zksync />}
+                        {location.pathname === "/zksync" && <Zksync />}
+                        {location.pathname === "/stark" && <Stark />}
+                        {location.pathname === "/layer" && <Layer />}
+                        {location.pathname === "/mirror" && <Mirror />}
+                        {location.pathname === "/coffee" && <Coffee />}
+                        {location.pathname === "/demo" && <Demo />}
+                        {location.pathname === "/deposit" && <Deposit />}
                     </div>
                 </div>
             </Layout>

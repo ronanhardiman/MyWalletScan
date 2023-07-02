@@ -1,11 +1,11 @@
 import React from 'react';
-import {Layout, Typography, Button, message, Space} from 'antd';
-import {QrcodeOutlined, CopyOutlined} from '@ant-design/icons';
+import { Layout, Typography, Button, message, Space } from 'antd';
+import { QrcodeOutlined, CopyOutlined } from '@ant-design/icons';
 import QRCode from 'qrcode.react';
 import copy from 'copy-to-clipboard';
 
-const {Content} = Layout;
-const {Title, Text} = Typography;
+const { Content } = Layout;
+const { Title, Text } = Typography;
 
 const Coffee = () => {
     const ethAddress = "0x88888A8b367cCE8C82C451f37511905c3028ed49";
@@ -40,15 +40,15 @@ const Coffee = () => {
     return (
         <Layout>
             <Content style={contentStyle}>
-                <Title level={3} style={textStyle}>如果你觉得这款工具对你有所帮助，可以请作者喝杯咖啡提提神吗😄</Title>
+                <Title level={3} style={textStyle}>如果你觉得这款工具对你有所帮助，可以请作者喝杯咖啡提提神吗😄??</Title>
                 <div style={textStyle}>
                     <Space>
                         <Text><strong>EVM地址：</strong>{ethAddress}</Text>
-                        <Button icon={<CopyOutlined/>} onClick={copyAddress}></Button>
+                        <Button icon={<CopyOutlined />} onClick={copyAddress}></Button>
                     </Space>
                 </div>
                 <div style={qrCodeStyle}>
-                    <QRCode value={ethAddress}/>
+                    <QRCode value={ethAddress} />
                 </div>
             </Content>
         </Layout>
