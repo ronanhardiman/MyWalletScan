@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import { GithubOutlined, TwitterOutlined } from "@ant-design/icons";
 import './index.css'
-import { getEthPrice } from "@utils";
+import { getEthPrice, getBtcPrice } from "@utils";
 
 const EthPrice = () => {
     const [ethPrice, setEthPrice] = useState(null);
@@ -21,6 +21,24 @@ const EthPrice = () => {
     }
     return <div>ETH Price: ${ethPrice}</div>
 }
+
+const BtcPrice = () => {
+    const [btcPrice, setBtcPrice] = useState(null);
+    useEffect(() => {
+        const fetchPrice = async () => {
+            const price = await getBtcPrice();
+            setBtcPrice(price);
+        };
+        fetchPrice();
+        const interval = setInterval(fetchPrice, 10000);
+        return () => clearInterval(interval);
+    }, []);
+    if (btcPrice === null) {
+        return <div>Loading BTC Price...</div>;
+    }
+    return <div>BTC Price: ${btcPrice}</div>
+}
+
 const MenuHeader = () => {
     const items = [
         {
@@ -64,7 +82,12 @@ const MenuHeader = () => {
         {
             label: <EthPrice />,
             key: 'ethPrice',
+        },
+        {
+            label: <BtcPrice />,
+            key: 'btcPrice',
         }
+
     ];
     const navigate = useNavigate();
     const location = useLocation();
